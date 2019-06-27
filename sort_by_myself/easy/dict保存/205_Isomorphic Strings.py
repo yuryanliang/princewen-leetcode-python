@@ -46,17 +46,18 @@ class Solution(object):
 """
 
 
-def isIsomorphic1(self, s, t):
+def isIsomorphic1( s, t):
     d1, d2 = {}, {}
     for i, val in enumerate(s):
         d1[val] = d1.get(val, []) + [i]
     for i, val in enumerate(t):
         d2[val] = d2.get(val, []) + [i]
     return sorted(d1.values()) == sorted(d2.values())
+    # return (d1.values()) == (d2.values())
 
 
-def isIsomorphic2(self, s, t):
-    d1, d2 = [[] for _ in xrange(256)], [[] for _ in xrange(256)]
+def isIsomorphic2( s, t):
+    d1, d2 = [[] for _ in range(256)], [[] for _ in range(256)]
     for i, val in enumerate(s):
         d1[ord(val)].append(i)
     for i, val in enumerate(t):
@@ -64,7 +65,12 @@ def isIsomorphic2(self, s, t):
     return sorted(d1) == sorted(d2)
 
 """巧妙利用zip的原理"""
-def isIsomorphic3(self, s, t):
+def isIsomorphic3(s, t):
+
+    s_s=set(s)
+    z_st=zip(s,t)
+    s_zst=set(z_st)
+
     return len(set(zip(s, t))) == len(set(s)) == len(set(t))
 
 
@@ -85,3 +91,5 @@ def isIsomorphic(self, s, t):
         d2[ord(t[i])] = i + 1
     return True
 
+if __name__=="__main__":
+    print(isIsomorphic3("egg","add"))
