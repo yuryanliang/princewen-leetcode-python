@@ -1,3 +1,12 @@
+#benifit of array is that it can allow access to any element in constant time(same amount of time). O(1).
+# a chuck of memory in a fixed length.
+
+#true connections of elements and array is that they are slotted next to each other in the memory.
+
+#linked list has not strict linear ordering in memory. the ordering of the elements is controlled by the data structure
+# which contains each of the elements.
+# linked list used "node" to wrap each of the elements. along the element, it also include the metadata which is "next"
+
 class node:
     def __init__(self, data=None):
         self.data = data
