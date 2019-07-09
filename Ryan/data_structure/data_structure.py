@@ -7,6 +7,31 @@ a_2d = [[0] * 5 for _ in range(10)]
 a_3d = [[[0] * 5 for _ in range(10)] for _ in range(15)]
 1 == 1
 
+result=[]
+cur=[1,2,3, 4, 5]
+val=6
+
+new_cur=cur+[val]
+print('new_cur:', new_cur)
+result.append(new_cur)
+print(result)
+
+#last two elem
+print(cur[-2:])
+
+#increment 2
+print(cur[1:4:2])
+a=cur
+a[-1]    # last item in the array
+a[-2:]   # last two items in the array
+a[:-2]   # everything except the last two items
+
+
+a[::-1]    # all items in the array, reversed
+a[1::-1]   # the first two items, reversed
+a[:-3:-1]  # the last two items, reversed
+a[-3::-1]  # everything except the last two items, reversed
+
 # Dynamic Array
 a = []
 a.append(1)

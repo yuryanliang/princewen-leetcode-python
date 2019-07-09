@@ -35,3 +35,10 @@ class Solution(object):
             cur = cur.next
         cur.next = l1 or l2
         return head.next
+
+
+q=[]
+q.append(1)
+q.append(2)
+a=q.pop()
+1==1

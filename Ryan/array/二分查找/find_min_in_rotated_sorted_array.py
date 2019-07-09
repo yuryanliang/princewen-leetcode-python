@@ -15,7 +15,7 @@ def findMin( nums):
     return nums[left]
 
 nums=[3,4,1,2]
-findMin(nums)
+print(findMin(nums))
 
 
 class Solution(object):
