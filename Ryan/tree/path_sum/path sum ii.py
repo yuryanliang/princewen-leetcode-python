@@ -45,7 +45,7 @@ class Solution:
         cur.append(root.val)
         self.pathSumRecu(result, cur, root.left, sum - root.val)
         self.pathSumRecu(result, cur, root.right, sum - root.val)
-        cur.pop()
+        cur.pop() # 并且，每当DFS搜索到子节点，发现不是路径和时，返回上一个结点时，需要把该节点从一维vector中移除
         return result
 
 
