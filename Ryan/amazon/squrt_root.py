@@ -22,6 +22,9 @@ e
 """
 
 
+
+
+
 def sqrt(n):  # n=7
     if n == 0: return 0
     if n < 0:
@@ -111,7 +114,9 @@ def mySqrt( x):
         else:
             left = mid + 1
     return right
-data=[3, 4, 5, 6, 7, 8, 9]
 
-for i in data:
-    print(i, mySqrt(i))
+def main():
+    data=[3, 4, 5, 6, 7, 8, 9]
+
+    for i in data:
+        print(i, mySqrt(i))
