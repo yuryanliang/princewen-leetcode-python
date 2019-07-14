@@ -71,8 +71,8 @@ def remove_str(line, word):
     return line
 
 
-with open(“hello.txt”, “w”) as f:
-    f.write(“Hello World”)
+# with open(“hello.txt”, “w”) as f:
+#     f.write(“Hello World”)
 
 # importing "copy" for copy operations
 import copy
@@ -84,8 +84,8 @@ li1 = [1, 2, [3, 5], 4]
 li2 = copy.deepcopy(li1)
 
 
-with open(“hello.txt”) as f:
-    data = f.readlines()
+# with open(“hello.txt”) as f:
+#     data = f.readlines()
 
 def main():
     # insert_ind("a book", "red", 1)
