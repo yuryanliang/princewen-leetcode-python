@@ -1,7 +1,7 @@
 class Sol:
     def rem_dup(self, nums) :
-        if len(nums) < 2:
-            return len(nums)
+        if len(nums) == 0 :
+            return 0
         s = 0 # slow
         f = 1 # fast
         while f < len(nums):
