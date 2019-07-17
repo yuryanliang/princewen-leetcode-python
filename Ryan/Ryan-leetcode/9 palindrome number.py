@@ -1,3 +1,4 @@
+# str method
 class Solution:
     def isPalindrome(self, x: int) -> bool:
         x_str = str(x)
@@ -9,7 +10,7 @@ def main():
     for n in nums:
         print(Solution().isPalindrome(n))
 
-
+# best method
 class Sol_1:
     def is_palindrome(self, x):
         if x < 0:

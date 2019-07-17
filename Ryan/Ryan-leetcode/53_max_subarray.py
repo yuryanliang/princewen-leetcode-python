@@ -15,6 +15,15 @@ class Sol_1:
             sum += nums[k]
         return sum
 
+# brute force II
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        res = []
+        for i in range(len(nums)):
+            for j in range(i+1, len(nums)+1):
+                cur_sum = sum(nums[i:j])
+                res.append(cur_sum)
+        return max(res)
 #best
 class Sol_2:
     def max_subarray(self, nums):
