@@ -12,7 +12,7 @@ def display(node):
         elem.append(cur.val)
         cur = cur.next
     print(elem)
-
+# iteration
 class Solution:
     def deleteDuplicates(self, head):
         if not head:
@@ -35,16 +35,17 @@ def main():
     head = Solution().deleteDuplicates(l1)
     display(head)
 
-
+# recursion
 class Sol_1:
     def deleteDuplicates(self, head):
         if not head or not head.next:
             return head
-        head.next = self.deleteDuplicates(head.next)
         if head.val == head.next.val:
             return head.next
         else:
             return head
+        head.next = self.deleteDuplicates(head.next)
+
 
 def main_1():
     l1 = ListNode(1)

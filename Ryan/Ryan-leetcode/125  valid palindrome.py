@@ -6,10 +6,8 @@ class Sol_1:
                 temp += c
         n = len(s)
         temp = temp.lower()
-        if temp == temp[::-1]:
-            return True
-        else:
-            return False
+        return temp == temp[::-1]
+
 
 def main_1():
     s ="A man, a plan, a canal: Panama"
