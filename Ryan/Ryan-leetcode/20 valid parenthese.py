@@ -1,3 +1,32 @@
+class Sol:
+    def is_val(self, s):
+        left = {"(": 1, "[" : 2, "{": 3}
+        right = {")": 1, "]" : 2, "}": 3}
+
+        if s[0] in right:
+            return False
+
+        if len(s) == 0:
+            return True
+
+        stack = []
+        for c in s:
+            if c in left:
+                stack.append(c)
+            elif c in right:
+                if not stack:
+                    return False
+                else:
+                    temp = stack.pop()
+                    if left[temp] != right[c]:
+                        return False
+        if stack:
+            return False
+        else:
+            return True
+
+
+
 class Solution:
     def isValid(self, s):
         stack = []
