@@ -45,7 +45,8 @@ def main():
     l2.next = ListNode(3)
     l2.next.next = ListNode(4)
 
-    head = Solution().mergeTwoLists(l1, l2)
+    # head = Solution().mergeTwoLists(l1, l2)
+    head = Sol().merge(l1, l2)
     display(head)
 
 # recusion

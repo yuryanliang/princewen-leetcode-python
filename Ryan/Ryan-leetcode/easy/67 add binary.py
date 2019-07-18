@@ -19,13 +19,13 @@ class Solution:
             result = '1' + result
         return result
 
-class Solution:
-	def addBinary(self, a: str, b: str) -> str:
-
-        def findNum(string):
-            k, number = 0, 0
-            for i in range(len(string)-1,-1,-1):
-                number += int(string[i]) * (2**k)
-                k += 1
-            return number
-    return bin(findNum(a) + findNum(b))[2:]
+# class Solution:
+# 	def addBinary(self, a: str, b: str) -> str:
+#
+#         def findNum(string):
+#             k, number = 0, 0
+#             for i in range(len(string)-1,-1,-1):
+#                 number += int(string[i]) * (2**k)
+#                 k += 1
+#             return number
+#     # return bin(findNum(a) + findNum(b))[2:]
