@@ -7,7 +7,7 @@ class Node:
 
 
 class Solution:
-    def isSymmetric(self, root) :
+    def isSymmetric(self, root):
         if not root:
             return True
         return self.helper(root.left, root.right)
@@ -25,6 +25,7 @@ def main():
     root.left = Node(2)
     root.right = Node(2)
     print(Solution().isSymmetric(root))
+
 
 # class Solution {
 # public:

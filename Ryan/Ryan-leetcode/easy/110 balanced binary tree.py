@@ -18,7 +18,6 @@ class Solution:
             return 0
         return 1 + max(self.get_depth(root.left), self.get_depth(root.right))
 
-
 # class Solution {
 # public:
 #     bool isBalanced(TreeNode *root) {

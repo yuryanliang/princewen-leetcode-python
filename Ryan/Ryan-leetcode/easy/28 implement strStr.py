@@ -20,7 +20,9 @@ class Sol_1:
 def main_1():
     haystack="aaabaaabbbabaa"
     needle="babb"
+    needle="aba"
     print(Sol_1().strStr(haystack, needle))
+    print(Sol().strstr(haystack,needle))
 
 class Solution(object):
     def strStr(self, haystack, needle):

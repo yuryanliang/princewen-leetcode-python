@@ -5,17 +5,20 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 class Solution:
-    def sortedArrayToBST(self, nums) :
-        n=len(nums)
+    def sortedArrayToBST(self, nums):
+        n = len(nums)
 
         if n == 0:
             return None
         else:
-            root=TreeNode( nums[n // 2])
+            root = TreeNode(nums[n // 2])
             root.left = self.sortedArrayToBST(nums[: n // 2])
-            root.right = self.sortedArrayToBST( nums[n // 2 + 1:])
+            root.right = self.sortedArrayToBST(nums[n // 2 + 1:])
         return root
+
+
 #
 # class Solution {
 # public:
@@ -32,9 +35,10 @@ class Solution:
 #     }
 # };
 def main():
-    nums=[1,2,3,4]
+    nums = [1, 2, 3, 4]
     a = Solution().sortedArrayToBST(nums)
-    1==1
+    1 == 1
+
 
 if __name__ == '__main__':
     main()
