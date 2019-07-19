@@ -25,11 +25,13 @@ class Sol_1:
         else:
             return res
 
+
+
 def main_1():
     x = [-123]
     for n in x:
         print(Sol_1().reverse(n))
-
+# math reverse
 class Solution(object):
 
     def reverse(self, x):
