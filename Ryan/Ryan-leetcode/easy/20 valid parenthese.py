@@ -1,7 +1,39 @@
+"""
+Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+An input string is valid if:
+
+Open brackets must be closed by the same type of brackets.
+Open brackets must be closed in the correct order.
+Note that an empty string is also considered valid.
+
+Example 1:
+
+Input: "()"
+Output: true
+Example 2:
+
+Input: "()[]{}"
+Output: true
+Example 3:
+
+Input: "(]"
+Output: false
+Example 4:
+
+Input: "([)]"
+Output: false
+Example 5:
+
+Input: "{[]}"
+Output: true
+"""
+
+
 class Sol:
     def is_val(self, s):
-        left = {"(": 1, "[" : 2, "{": 3}
-        right = {")": 1, "]" : 2, "}": 3}
+        left = {"(": 1, "[": 2, "{": 3}
+        right = {")": 1, "]": 2, "}": 3}
 
         if s[0] in right:
             return False
@@ -26,7 +58,6 @@ class Sol:
             return True
 
 
-
 class Solution:
     def isValid(self, s):
         stack = []
@@ -48,8 +79,9 @@ class Solution:
         else:
             return False
 
+
 def main():
-    s="(]"
+    s = "(]"
     print(Solution().isValid(s))
 
 
