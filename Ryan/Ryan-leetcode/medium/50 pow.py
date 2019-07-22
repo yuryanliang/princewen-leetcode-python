@@ -6,6 +6,8 @@ class Sol_1:
         for i in range(n1 ):
             res = res *x
         return res if n > 0 else 1 / res
+
+
 def main_1():
     print(Sol_1().pow(2.00000, -2))
     print(Sol_1().pow(2.10000, 3))

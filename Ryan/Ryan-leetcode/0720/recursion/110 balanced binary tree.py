@@ -17,6 +17,7 @@ Given the following tree [3,9,20,null,null,15,7]:
 Return true.
 """
 
+
 # Definition for a binary tree node.
 class TreeNode:
     def __init__(self, x):
@@ -24,19 +25,24 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 class Solution:
     def isBalanced(self, root):
         if not root:
             return True
+        """
+        而对于一颗树，它是一个平衡二叉树需要满足三个条件：
+        它的左子树是平衡二叉树，它的右子树是平衡二叉树，它的左右子树的高度差不大于1。
+        """
         if abs(self.get_depth(root.left) - self.get_depth(root.right)) > 1:
             return False
-        return self.isBalanced(root.left) and self.isBalanced(root.right)
+        res = self.isBalanced(root.left) and self.isBalanced(root.right)  # the res from next recursion
+        return res
 
     def get_depth(self, root):
         if not root:
             return 0
         return 1 + max(self.get_depth(root.left), self.get_depth(root.right))
-
 
 # class Solution {
 # public:
