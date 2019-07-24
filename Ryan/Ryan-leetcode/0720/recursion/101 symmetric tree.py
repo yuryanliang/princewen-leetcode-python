@@ -18,6 +18,8 @@ But the following [1,2,2,null,3,null,3] is not:
    \   \
    3    3
 """
+
+
 # Definition for a binary tree node.
 class Node:
     def __init__(self, x):
@@ -47,27 +49,29 @@ def main():
     print(Solution().isSymmetric(root))
 
 
-# class Solution {
-# public:
-#     bool isSymmetric(TreeNode* root) {
-#         if (!root) return true;
-#         queue<TreeNode*> q1, q2;
-#         q1.push(root->left);
-#         q2.push(root->right);
-#         while (!q1.empty() && !q2.empty()) {
-#             TreeNode *node1 = q1.front(); q1.pop();
-#             TreeNode *node2 = q2.front(); q2.pop();
-#             if (!node1 && !node2) continue;
-#             if((node1 && !node2) || (!node1 && node2)) return false;
-#             if (node1->val != node2->val) return false;
-#             q1.push(node1->left);
-#             q1.push(node1->right);
-#             q2.push(node2->right);
-#             q2.push(node2->left);
-#         }
-#         return true;
-#     }
-# };
+class Solution:
+    def isSymmetric(self, root):
+        if not root:
+            return True
+        stack = []
+        stack.append(root.left)
+        stack.append(root.right)
+
+        while stack:
+            l, r = stack.pop(), stack.pop()
+
+            if not l and not r:
+                continue
+            if (not l and r) or (l and not r) or (l.val != r.val):
+                return False
+
+            stack.append(l.left)
+            stack.append(r.right)
+
+            stack.append(l.right)
+            stack.append(r.left)
+        return True
+
 
 if __name__ == '__main__':
     main()

@@ -27,7 +27,13 @@ class Recursion:
         t2.next = head
         head.next = None
         return newlist
+class Sol:
+    def rev(self, head):
+        dummy = ListNode(-1)
+        dummy.next = head
 
+        while head.next:
+            dummy, head, head.next = head.next, head, dummy
 
 def main_1():
     head = ListNode(1)
@@ -38,38 +44,27 @@ def main_1():
     rev_head = Recursion().rev(head)
     1 == 1
 
-"""
-my solution
-两个指针，一个记录当前的头节点，一个记录将要称为头节点的节点
-"""
 
 
-# Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
-
-class Solution(object):
+# Iterative solution.
+class Solution:
+    # @param {ListNode} head
+    # @return {ListNode}
     def reverseList(self, head):
-        """
-        :type head: ListNode
-        :rtype: ListNode
-        """
-        if not head:
-            return None
+        dummy = ListNode(float("-inf"))
+        while head:
+            dummy.next, head.next, head = head, dummy.next, head.next
+        return dummy.next
+    def rev(self, head):
+        prev = None
+        current = head
+        while current : # 移动 cur 的指针从 next 到 prev
+            next = current.next # 先把cur当前指向的next 存下来
+            current.next = prev # 把cur指向prev
 
-        p = head
-        q = head.next
-
-        while q:
-            head.next = q.next
-            q.next = p
-            p = q
-            q = head.next
-        return p
-
-
+            prev = current # pre 和 cur 向后移动
+            current = next
+        return prev
 
 if __name__ == '__main__':
     main_1()

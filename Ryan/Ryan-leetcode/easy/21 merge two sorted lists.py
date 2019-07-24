@@ -7,6 +7,8 @@ Example:
 Input: 1->2->4, 1->3->4
 Output: 1->1->2->3->4->4
 """
+
+
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, x):
@@ -21,7 +23,6 @@ def display(node):
         elem.append(cur.val)
         cur = cur.next
     print(elem)
-
 
 
 # iteration
@@ -58,6 +59,7 @@ def main():
     head = Sol().merge(l1, l2)
     display(head)
 
+
 # recusion
 class Sol_2:
     def mergeTwoLists(self, l1, l2):
@@ -73,6 +75,7 @@ class Sol_2:
             l2.next = self.mergeTwoLists(l2.next, l1)
             return l2
 
+
 def main_2():
     l1 = ListNode(1)
     l1.next = ListNode(2)
@@ -83,6 +86,7 @@ def main_2():
 
     head = Sol_2().mergeTwoLists(l1, l2)
     display(head)
+
 
 if __name__ == '__main__':
     main()
