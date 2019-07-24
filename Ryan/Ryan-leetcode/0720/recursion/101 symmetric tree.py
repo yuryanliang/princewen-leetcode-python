@@ -18,6 +18,8 @@ But the following [1,2,2,null,3,null,3] is not:
    \   \
    3    3
 """
+
+
 # Definition for a binary tree node.
 class Node:
     def __init__(self, x):
@@ -48,7 +50,7 @@ def main():
 
 
 class Solution:
-    def isSymmetric(self, root) :
+    def isSymmetric(self, root):
         if not root:
             return True
         stack = []
@@ -69,6 +71,7 @@ class Solution:
             stack.append(l.right)
             stack.append(r.left)
         return True
+
 
 if __name__ == '__main__':
     main()

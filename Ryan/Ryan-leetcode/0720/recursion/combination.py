@@ -26,13 +26,13 @@ class Comb_1:
             print()
         else:
             for i in range(k, n):
-                t1= t
                 t[i], t[k] = t[k], t[i]  # 一次挑选n个字母中的一个,和前位置替换
-                res =self.pai(t, k + 1, n)  # 再对其余的n-1个字母一次挑选
-                print(res)
-                t2=t
+                self.pai(t, k + 1, n)  # 再对其余的n-1个字母一次挑选
                 t[i], t[k] = t[k], t[i]  # 再换回来
-                t3=t
+
+
+
+
 
 
 def main_1():

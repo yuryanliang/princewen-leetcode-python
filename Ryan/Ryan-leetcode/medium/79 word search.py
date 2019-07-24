@@ -1,3 +1,21 @@
+"""
+Given a 2D board and a word, find if the word exists in the grid.
+
+The word can be constructed from letters of sequentially adjacent cell, where "adjacent" cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once.
+
+Example:
+
+board =
+[
+  ['A','B','C','E'],
+  ['S','F','C','S'],
+  ['A','D','E','E']
+]
+
+Given word = "ABCCED", return true.
+Given word = "SEE", return true.
+Given word = "ABCB", return false.
+"""
 class Sol_1:
     def exist(self, board, word):
         if not word:
@@ -26,7 +44,7 @@ class Sol_1:
         if self.helper(board, word[1:], i, j-1):
             return True
 
-        board[i][j] =word[0] #r eset the board
+        board[i][j] =word[0] # reset the board
         return False
 def main():
     board =[

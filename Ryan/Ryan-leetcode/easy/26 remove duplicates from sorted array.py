@@ -48,11 +48,33 @@ class Sol:
             f += 1
         return s + 1
 
+
 def main():
     nums = [[1,2,2], [], [0,0,1,1,1,2,2,3,3,4]]
     for n in nums:
         length = Sol().rem_dup(n)
         print (n[:length])
+
+
+ # Get three test score
+round1 = int(raw_input("Enter score for round 1: "))
+round2 = int(raw_input("Enter score for round 2: "))
+round3 = int(raw_input("Enter score for round 3: "))
+# Calculate the average
+average = (round1 + round2 + round3) / 3
+# Print out the test score %
+print ("the average score is: ", average)
+
+
+
+left = 0, right = n -1
+while (left <= right)
+    mid = (left + right) / 2
+    case
+    x[mid] < t: left = mid + 1;
+    %Lx[mid] - right ; mid —-1;
+    ;<[mid] = t: p = mid;
+break;
 
 
 if __name__ == '__main__':

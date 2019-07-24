@@ -27,7 +27,13 @@ class Recursion:
         t2.next = head
         head.next = None
         return newlist
+class Sol:
+    def rev(self, head):
+        dummy = ListNode(-1)
+        dummy.next = head
 
+        while head.next:
+            dummy, head, head.next = head.next, head, dummy
 
 def main_1():
     head = ListNode(1)
@@ -49,6 +55,16 @@ class Solution:
         while head:
             dummy.next, head.next, head = head, dummy.next, head.next
         return dummy.next
+    def rev(self, head):
+        prev = None
+        current = head
+        while current : # 移动 cur 的指针从 next 到 prev
+            next = current.next # 先把cur当前指向的next 存下来
+            current.next = prev # 把cur指向prev
+
+            prev = current # pre 和 cur 向后移动
+            current = next
+        return prev
 
 if __name__ == '__main__':
     main_1()
