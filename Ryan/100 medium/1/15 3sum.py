@@ -1,5 +1,6 @@
 """
-Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
+Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0?
+Find all unique triplets in the array which gives the sum of zero.
 
 Note:
 
@@ -15,7 +16,15 @@ A solution set is:
   [-1, -1, 2]
 ]
 """
+"""
+方法一：
+用for loop 循环第三个值， 另两个值做 two sum
 
+方法二；
+sort 数组
+while loop 循环第三个值， 另两个值 用双指针从左右向中间移动
+注意 符合条件之后的移动 要dedup
+"""
 
 class Sol:
     # def threeSum(self, nums: List[int]) -> List[List[int]]:

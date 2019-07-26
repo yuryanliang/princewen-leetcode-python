@@ -12,6 +12,10 @@ Output: 7 -> 0 -> 8
 Explanation: 342 + 465 = 807.
 """
 
+"""
+用指针 每一位移动
+计算carry
+"""
 # Definition for singly-linked list.
 class ListNode:
     def __init__(self, x):

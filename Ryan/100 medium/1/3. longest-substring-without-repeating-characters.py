@@ -19,7 +19,10 @@ Explanation: The answer is "wke", with the length of 3.
              Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
 """
 
-
+"""
+从每个字母为开头 loop一遍， 用一个指针更新最大值
+edge case： 是走到头还没有重复的
+"""
 class Solution:
     # def lengthOfLongestSubstring(self, s: str) -> int:
     def longest(self, s):
@@ -27,7 +30,7 @@ class Solution:
         res = 0
         for i in range(len(s)):
             j = i + 1
-            lookup = {s[i]: i}
+            lookup = {s[i]: i} # use  dict
 
             while j < len(s):
                 if s[j] in lookup:
@@ -36,7 +39,7 @@ class Solution:
                 else:
                     lookup[s[j]] = j
                 j += 1
-            if j == len(s):  # when s = 'au'
+            if j == len(s):  # when s = 'au', edge case
                 res = max(res, j - i)
 
         return res

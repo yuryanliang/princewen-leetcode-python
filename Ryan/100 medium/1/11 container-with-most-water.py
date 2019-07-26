@@ -17,7 +17,12 @@ Input: [1,8,6,2,5,4,8,3,7]
 Output: 49
 """
 
+"""
+左右指针向中间移动 
+更新最大值， 便利结果
+挪动刻度小的那个
 
+"""
 class Solution:
     # def maxArea(self, height: List[int]) -> int:
     def max_area(self, height):
