@@ -12,7 +12,13 @@ Input: "cbbd"
 Output: "bb"
 """
 
+"""
+每个字母为中心loop一遍
 
+内层while 循环同时向两边扩展
+
+分 single 和double 两种情况
+"""
 class Solution:
     # def longestPalindrome(self, s: str) -> str:
     def longest(self, s):
