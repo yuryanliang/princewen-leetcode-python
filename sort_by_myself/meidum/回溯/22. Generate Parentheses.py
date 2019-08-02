@@ -35,3 +35,6 @@ class Solution(object):
         return res
 
 
+if __name__ == '__main__':
+    n =3
+    print(Solution().generateParenthesis(n))
