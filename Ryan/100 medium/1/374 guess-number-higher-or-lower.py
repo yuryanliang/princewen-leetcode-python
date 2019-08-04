@@ -15,3 +15,30 @@ Example :
 Input: n = 10, pick = 6
 Output: 6
 """
+def guess(n):
+    pick = 6
+    if n == 6 :
+        return 0
+    elif n < 6:
+        return -1
+    else:
+        return 1
+
+class Sol:
+    def guess(self, n ):
+        left = 1
+        right = n
+        while left < right:
+            mid = (left + right) // 2
+            res = guess(mid)
+            if res == 0:
+                return mid
+            elif res == -1:
+                left = mid + 1
+            else:
+                right = mid
+        return left
+
+
+if __name__ == '__main__':
+    print(Sol().guess(10))
