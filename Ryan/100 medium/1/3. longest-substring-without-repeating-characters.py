@@ -45,6 +45,7 @@ class Solution:
         return res
 
 
+
 class Solution(object):
     def lengthOfLongestSubstring(self, s):
         """
@@ -62,3 +63,4 @@ class Solution(object):
             used[c] = i
 
         return max_length
+

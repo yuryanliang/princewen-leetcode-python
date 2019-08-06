@@ -43,6 +43,27 @@ class Sol:
         nums[piv + 1:] = sorted(nums[piv + 1:])
         return nums
 
+    def next(self, nums):
+        piv = -1
+        for i in range(len(nums) -1):
+            if nums[i] > nums[i + 1]:
+                piv = i
+        if piv == -1:
+            nums.reverse()
+            return
+
+        small = 0
+
+        for i in range(piv + 1, len(nums)):
+            if nums[i]< nums[piv]:
+                small = i
+
+        nums[piv], nums[small] = nums[small], nums[piv]
+
+        nums[piv + 1:] = sorted(nums[piv+1 :])
+
+        return nums
+
 def main():
     nums = [1, 3, 2]
     # nums = [1, 1, 5]

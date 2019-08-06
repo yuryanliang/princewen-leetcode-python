@@ -11,6 +11,7 @@ For example,
 """
 """先统计链表的数字的个数，然后删除第len-n个数"""
 
+
 # Definition for singly-linked list.
 class ListNode(object):
     def __init__(self, x):
@@ -37,6 +38,24 @@ class Sol:
 
         return dummy.next
 
+    def remove(self, head, n):
+        length = 0
+        cur = head
+        while cur:
+            length += 1
+            cur = cur.next
+
+        # need previous
+        dummy = ListNode(-1)
+        dummy.next = head
+        cur1 = dummy
+
+        for _ in range(length - n):
+            cur1 = cur1.next
+
+        cur1.next = cur1.next.next
+        return dummy.next
+
 
 class Solution(object):
     def removeNthFromEnd(self, head, n):
@@ -60,7 +79,5 @@ class Solution(object):
                 len1 = len1 - 1
             p.next = p.next.next
             return head
-
-
 
 

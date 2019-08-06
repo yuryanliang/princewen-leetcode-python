@@ -42,14 +42,14 @@ Explanation:
 
 
 class Solution:
-    def evalRPN(self, tokens) :
+    def evalRPN(self, tokens):
         stack = []
 
-        operator ={
-            "+": lambda a, b : a + b,
+        operator = {
+            "+": lambda a, b: a + b,
             "-": lambda a, b: a - b,
             "*": lambda a, b: a * b,
-            "/": lambda a, b: int(float(a) / float (b)),
+            "/": lambda a, b: int(float(a) / float(b)),
         }
         for s in tokens:
             if s not in operator:
@@ -59,35 +59,61 @@ class Solution:
                 p2 = stack.pop()
 
                 operate = operator[s]
-                temp= operate(p2, p1)
+                temp = operate(p2, p1)
                 stack.append(temp)
-
 
         return stack.pop()
 
+
 class Solution(object):
-  def evalRPN(self, tokens):
-    """
-    :type tokens: List[str]
-    :rtype: int
-    """
-    stack = []
-    for token in tokens:
-      if token in ["+", "-", "*", "/"]:
-        b, a = stack.pop(), stack.pop()
-        if token == "+":
-          res = a + b
-        if token == "-":
-          res = a - b
-        if token == "*":
-          res = a * b
-        if token == "/":
-          res = int(float(a) / float(b))
-        stack.append(res)
-      else:
-        stack.append(int(token))
-    return stack.pop()
+    def evalRPN(self, tokens):
+        """
+        :type tokens: List[str]
+        :rtype: int
+        """
+        stack = []
+        for token in tokens:
+            if token in ["+", "-", "*", "/"]:
+                b, a = stack.pop(), stack.pop()
+                if token == "+":
+                    res = a + b
+                if token == "-":
+                    res = a - b
+                if token == "*":
+                    res = a * b
+                if token == "/":
+                    res = int(float(a) / float(b))
+                stack.append(res)
+            else:
+                stack.append(int(token))
+        return stack.pop()
+
+class Sol:
+    def eval(self, tokens):
+        stack = []
+        for token in tokens:
+            if token in ["+", "-", "*", "/"]:
+                b , a = stack.pop(), stack.pop()
+                if token == "+":
+                    res = a + b
+                if token == "-":
+                    res = a - b
+                if token == "*":
+                    res = a * b
+                if token == "/":
+                    res = int(float(a) / float(b))
+                stack.append(res)
+            else:
+                stack.append(int(token))
+        return stack.pop()
+
 if __name__ == "__main__":
-    print (Solution().evalRPN(["2", "1", "+", "3", "*"]))
+    a = 3
+    b= -2
+    res = int(float(a) / float(b))
+    r = a/b
+    u = a//b
+    1==1
+    # print(Solution().evalRPN(["2", "1", "+", "3", "*"]))
     # print (Solution().evalRPN(["4", "13", "5", "/", "+"]))
     # print (Solution().evalRPN(["10","6","9","3","+","-11","*","/","*","17","+","5","+"]))

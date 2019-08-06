@@ -38,6 +38,22 @@ class Solution(object):
                 res[i] = res[i] + choices[temp]
         return res
 
+    def letter(self, digits):
+        if not digits:
+            return []
+        lookup = ["", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"]
+        res = [""]
+
+        for d in digits:
+            choices = lookup[int(d)]
+            n = len(res)
+            res = res * len(choices)
+            for i in range(len(choices)* n):
+                temp = i //n
+                res[i]= res[i]+ choices[temp]
+        return res
+
+
 
 class Solution2(object):
     def letterCombinations(self, digits):

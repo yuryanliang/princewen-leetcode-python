@@ -42,6 +42,25 @@ class Solution:
 
         return res
 
+    def merge(self, intervals):
+        inter = intervals
+        inter.sort(key = lambda x: x[0])
+
+        for i in range(1, len(inter)):
+            if inter[i][0] <=inter[i-1][-1] and inter[i][-1] >= inter[i-1[0]]:
+                new_start = min(inter[i-1][0], inter[i][0])
+                new_end = max(inter[i][-1], inter[i -1 ][-1])
+
+                del inter[i]
+                del inter[i -1]
+                inter.insert(i-1, [new_start, new_end])
+                inter.insert(i-1, [-1])
+        res =[]
+        for i in inter:
+            if i not in res and i != [-1]:
+                res.append(i)
+        return res
+
 class Solution(object):
     def merge(self, intervals):
         """

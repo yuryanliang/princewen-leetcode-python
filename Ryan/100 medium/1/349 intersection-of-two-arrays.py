@@ -33,6 +33,26 @@ class Sol1:
                 j += 1
         return res
 
+    def inter(self, nums1, nums2):
+        nums1.sort()
+        nums2.sort()
+        i , j = 0, 0
+        res = []
+
+        while i < len(nums1) and j < len(nums2):
+            if nums1[i] < nums2[j]:
+                i += 1
+            elif nums1[i] > nums2[j]:
+                j +=1
+            else:
+                if not (len(res) and nums1[i]==res[-1]):
+                    res.append(nums1[i])
+                i +=1
+                j +=1
+        return res
+
+
+
 
 
 #brute force
@@ -44,6 +64,15 @@ class Sol2:
                 res.append(i)
         return res
 
+    def inter(self, nums1, nums2):
+        res = []
+        for i in nums1:
+            if i in nums2 and i not in res:
+                res.append(i)
+        return res
+
+
+
 # hast table
 class Sol:
     def inter(self, nums1, nums2):
@@ -52,6 +81,18 @@ class Sol:
         for i in nums1:
             if i not in lookup:
                 lookup[i] = 1
+        for j in nums2:
+            if j in lookup and j not in res:
+                res.append(j)
+        return res
+
+    def inter(self, nums1, nums2):
+        lookup ={}
+        res = []
+        for i in nums1:
+            if i not in lookup:
+                lookup[i] =1
+
         for j in nums2:
             if j in lookup and j not in res:
                 res.append(j)

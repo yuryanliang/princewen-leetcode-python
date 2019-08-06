@@ -1,7 +1,8 @@
 """
 A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
 
-The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
+The robot can only move either down or right at any point in time.
+The robot is trying to reach the bottom-right corner of the grid (marked 'Finish' in the diagram below).
 
 How many possible unique paths are there?
 
@@ -48,6 +49,21 @@ class Solution:
 
         return dp[n - 1][m - 1]  # return n - 1, m - 1, m是列， n是行
 
+    def uniq(self, m, n): # m is col, n is row
+        dp =[[ -1 for _ in range(m)] for _ in range(n)]
+        dp[0][0] = 1
+
+        for i in range(n):
+            for j in range(m):
+                up = dp[i-1][j] if i-1 >=0 else 0
+                left = dp[i][j - 1] if j-1 >=0 else 0
+
+                if i ==0 and j ==0:
+                    continue
+
+                else:
+                    dp[i][j]=up + left
+        return dp[n - 1][m - 1]
 
 if __name__ == "__main__":
     print(Solution().uniquePaths(2, 3))

@@ -85,6 +85,29 @@ class Solution:
             cur.next = ListNode(1)
         return dummy.next
 
+    def add_two(self, l1, l2):
+        dummy = ListNode(-1)
+        cur = dummy
+        carry = 0
 
+        while l1 or l2:
+            new_sum = int()
+            new_sum += carry
+            if l1:
+                new_sum += l1.val
+                l1 = l1.next
+            if l2:
+                new_sum += l2.val
+                l2 = l2.next
 
+            if new_sum < 10:
+                cur.next = ListNode(new_sum)
+                carry = 0
+            else:
+                cur.next = ListNode(new_sum % 10)
+                carry = 1
+            cur = cur.next
+        if carry:
+            cur.next = ListNode(1)
+        return dummy.next
 
