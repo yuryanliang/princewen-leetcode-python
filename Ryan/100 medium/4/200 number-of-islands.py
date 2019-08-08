@@ -52,3 +52,47 @@ class Solution:
         if j < col -1:
             self.dfs(grid, row, col, i, j+ 1)
 
+class Sol:
+    def num(self, grid):
+        if not grid:
+            return 0
+
+        row = len(grid)
+        col = len(grid[0])
+
+        cnt = 0
+
+        for i in range(row):
+            for j in range(col):
+                if grid[i][j]=="1":
+                    self.dfs(i, j, grid)
+                    cnt +=1
+
+        for k in grid:
+            print(k)
+        return cnt
+    def dfs(self,i, j, grid):
+        print(i,j )
+        for k in grid:
+            print(k)
+        print("will chang",i,j )
+        print()
+        grid[i][j]="X"
+
+        if i - 1>= 0 and grid[i-1][j]=="1":
+            self.dfs(i-1, j, grid)
+        if i + 1< len(grid) and grid[i +1][j]=="1":
+            self.dfs(i + 1, j, grid)
+        if j - 1 >= 0 and grid[i][j-1] =="1":
+            self.dfs(i, j -1, grid)
+        if j + 1 < len(grid[0]) and grid[i][j+1]=="1":
+            self.dfs(i,j + 1, grid)
+
+
+if __name__ == '__main__':
+    grid=[["1","1","1","1","0"],
+          ["1","1","0","1","0"],
+          ["1","1","0","0","0"],
+          ["0","0","0","0","1"]]
+
+    print(Sol().num(grid))

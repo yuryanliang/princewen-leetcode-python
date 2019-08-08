@@ -40,6 +40,23 @@ class Solution:
                 lookup[guess[i]]-=1
         return str(bull)+"A"+str(cow)+"B"
 
+    def get(self, secret, guess):
+        bull = 0
+        cow = 0
+        lookup = {}
+
+        for i, val in enumerate(secret):
+            if val == guess[i]:
+                bull +=1
+            else:
+                lookup[val]=lookup.get(val, 0) + 1
+
+        for i, val in enumerate(secret):
+            if val != guess[i] and lookup.get(guess[i], 0)!=0:
+                cow +=1
+                lookup[guess[i]]-=1
+
+        return str(bull)+"A"+str(cow)+"B"
 
 class Solution:
     def getHint(self, secret, guess):

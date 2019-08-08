@@ -52,6 +52,33 @@ class Sol:
             subsum = divisor  # reset subsum
 
         return max(min(sign * ans, 0x7fffffff), -2147483648)
+
+    def div(self, dividend, divisor):
+        if divisor == 0:
+            return 0x7fffffff
+        sign = 1
+
+        if dividend * divisor <0:
+            sign = -1
+
+        ans = 0
+        cnt = 1
+
+        dividend = abs(dividend)
+        divisor = abs(divisor)
+
+        subsum = divisor
+
+        while dividend >= divisor:
+            while (subsum <<1) <= dividend:
+                cnt <<= 1
+                subsum <<= 1
+            ans += cnt
+            dividend -= subsum
+            cnt =1
+            subsum = divisor
+        return max(min(sign * 0x7fffffff), -0x7fffffff+1)
+
 def main():
     print(Sol().div(7, -3))
 

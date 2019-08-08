@@ -35,6 +35,28 @@ class Solution(object):
                     start = end = nums[i]
         return res
 
+    def summ(self,nums):
+        res = []
+        if not nums:
+            return res
+
+        start, end = nums[0], nums[0]
+
+        for i in range(1, len(nums)+ 1):
+            if i < len(nums) and nums[i]==end +1:
+                end = nums[i]
+            else:
+                interval = str(start)
+                if start != end:
+                    interval += "->"+str(end)
+                res.append(interval)
+
+                if i < len(nums):
+                    start = end = nums[i]
+        return res
+
+
+
 
 if __name__ == '__main__':
     nums =[0,1,2,4,5,7]

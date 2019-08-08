@@ -34,6 +34,7 @@ class Solution:
                 result[key] = [i]
 
         return result.values()
+
     def g(self,strs):
         res={}
         for s in strs:
@@ -43,6 +44,8 @@ class Solution:
             except:
                 res[key]=[s]
         return res.values()
+
+
 
 
 if __name__ == "__main__":

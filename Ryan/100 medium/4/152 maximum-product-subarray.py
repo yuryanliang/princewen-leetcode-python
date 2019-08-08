@@ -27,6 +27,15 @@ class Solution:
             global_max = max(local_max, global_max)
         return global_max
 
+    def max(self, nums):
+        import sys
+        local_min, local_max, global_max = 1, 1, -sys.maxsize
+
+        for n in nums:
+            local_min, local_max = min(n, local_min * n, local_max * n), max(n, local_min * n, local_max * n)
+            global_max = max(global_max, local_max)
+        return global_max
+
 class Sol:
     def maxProduct(self, nums):
         if len(nums) == 1:
@@ -42,6 +51,22 @@ class Sol:
                 cur = cur * nums[j]
                 max_product = max(cur, max_product)
                 j += 1
+        return max_product
+
+    def max(self, nums):
+        if len(nums) == 1:
+            return nums[0]
+        import sys
+        max_product = -sys.maxsize
+
+        for i in range(len(nums)):
+            j = i + 1
+            cur = nums[i]
+            while j < len(nums):
+                cur = cur * nums[j]
+                max_product = max(cur, max_product)
+                j +=1
+
         return max_product
 if __name__ == "__main__":
     print (Solution().maxProduct([2, 3, -2, 4]))

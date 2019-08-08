@@ -1,5 +1,6 @@
 """
-Given a set of candidate numbers (candidates) (without duplicates) and a target number (target), find all unique combinations in candidates where the candidate numbers sums to target.
+Given a set of candidate numbers (candidates) (without duplicates) and a target number (target), 
+find all unique combinations in candidates where the candidate numbers sums to target.
 
 The same repeated number may be chosen from candidates unlimited number of times.
 
@@ -27,33 +28,33 @@ A solution set is:
 """
 """
 backtracking
-初始 res， 也许start， alist
+初始 res， 也许start， path
 
-进入helper， 先判断什么时候加结果， len（alist）= len（nums） 或者直接就加， 要考虑dedup 要copy temp
+进入helper， 先判断什么时候加结果， len（path）= len（nums） 或者直接就加， 要考虑dedup 要copy temp
 
-然后for loop，从start或者i开始， 先加入alist。 然后call helper， 然后pop
+然后for loop，从start或者i开始， 先加入path。 然后call helper， 然后pop
 """
 class Sol:
     def comb_sum(self, candidates, target):
         if not candidates:
             return []
         result = []
-        alist = []  # nums already used
+        path = []  # nums already used
         start = 0 # need to use a start point otherwise it exceed time limit
-        self.helper(candidates, start, alist, target, result)
+        self.helper(candidates, start, path, target, result)
         return result
 
-    def helper(self, cand, start, alist, target, res):
-        if sum(alist) == target:
-            temp = alist.copy()
+    def helper(self, cand, start, path, target, res):
+        if sum(path) == target:
+            temp = path.copy()
             temp.sort()
             if temp not in res:
                 res.append(temp)
 
-        while start < len(cand) and sum(alist) < target:
-            alist.append(cand[start])
-            self.helper(cand, start, alist, target, res)
-            alist.pop()
+        while start < len(cand) and sum(path) < target:
+            path.append(cand[start])
+            self.helper(cand, start, path, target, res)
+            path.pop()
             start += 1
 
 

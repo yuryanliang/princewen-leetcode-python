@@ -1,5 +1,7 @@
 """
-Given an array nums containing n + 1 integers where each integer is between 1 and n (inclusive), prove that at least one duplicate number must exist. Assume that there is only one duplicate number, find the duplicate one.
+Given an array nums containing n + 1 integers where each integer is between 1 and n (inclusive),
+ prove that at least one duplicate number must exist. Assume that there is only one duplicate number,
+ find the duplicate one.
 
 Example 1:
 
@@ -18,6 +20,15 @@ There is only one duplicate number in the array, but it could be repeated more t
 """
 from collections import defaultdict
 
+
+class Sol:
+    def dup(self, nums):
+        lookup = defaultdict(list)
+        for i, val in enumerate(nums):
+            if val in lookup:
+                return val
+            else:
+                lookup[val].append(i)
 
 class Sol:
     def dup(self, nums):
