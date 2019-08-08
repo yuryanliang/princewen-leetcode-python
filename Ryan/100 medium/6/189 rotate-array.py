@@ -40,11 +40,47 @@ class Solution:
         nums[k:]=second
         print(nums)
 
+class Solution1:
+    def rotate(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: None Do not return anything, modify nums in-place instead.
+        """
+        for _ in range(k):
+            previous = nums[-1] #initiate a first previous
+            for i in range(len(nums)):
 
+                previous,nums[i]= nums[i], previous
+        print(nums)
+
+class Solution4:
+    def rotate(self, nums, k) -> None:
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: None Do not return anything, modify nums in-place instead.
+        """
+        k %= len(nums)
+        self.reverse(nums,0,len(nums)-1)
+        self.reverse(nums,0, k-1)
+        self.reverse(nums,k, len(nums)-1)
+
+    def reverse(self, nums, start, end) -> None:
+        """
+        :type nums: List[int]
+        :type start: int
+        :type end: int
+        :rtype: None
+        """
+        while start < end: #
+            nums[start], nums[end] = nums[end], nums[start]
+            start += 1
+            end -= 1
 if __name__ == '__main__':
     nums =[1,2,3,4,5,6,7]
     k = 3
-    nums =[1]
-    k = 0
-    Solution().rotate(nums, k)
+    # nums =[1]
+    # k = 0
+    Solution1().rotate(nums, k)
     print(nums)

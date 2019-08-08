@@ -1,5 +1,6 @@
 """
-Given an array nums and a target value k, find the maximum length of a subarray that sums to k. If there isn't one, return 0 instead.
+Given an array nums and a target value k, find the maximum length of a subarray that sums to k.
+If there isn't one, return 0 instead.
 
 Example 1:
 Given nums = [1, -1, 5, -2, 3], k = 3,
@@ -39,7 +40,9 @@ class Sol:
             temp=cur_sum -k
             if cur_sum ==k:
                 max_len = i +1
-
+            # i, j
+            # sum[j] - sum[i] = k.
+            # sum[j] - k = sum[i]
             elif cur_sum - k in sums:
                 temp1 = i - sums[cur_sum - k]
 
